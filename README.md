@@ -21,7 +21,7 @@ Para um valor menor, por exemplo:
         - for _ in range(10000):
 
 Caso queira também, você pode testar o algoritmo funcionando apenas com o algoritmo construtivo, sem ter melhoramento de solução,
-para isso, basta comentar as linhas que chamam o melhoramento: Comentário é feito com o símbolo '#'
+para isso, basta comentar as linhas que chamam o melhoramento: Comentário é feito com o símbolo '#' (linhas 302 a 307)
 
            # nome_do_arquivo = sys.argv[1]
            # print("Set Covering Problem - Heuristica Construtiva 1\n")
@@ -29,4 +29,4 @@ para isso, basta comentar as linhas que chamam o melhoramento: Comentário é fe
            # print("\nSet Covering Problem - Heuristica Construtiva 2\n")
            # construtivo_2_com_melhoramento(ler_arquivo(nome_do_arquivo))
 
-E descomentar as linhas (remover o '#') que aparecem abaixo desses comandos, e executar o algoritmo normalmente
+E descomentar as linhas (remover o '#') que aparecem da linha 309 a  319, e executar o algoritmo normalmente
