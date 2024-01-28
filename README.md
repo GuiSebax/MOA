@@ -1,8 +1,8 @@
 Compreensões para a execução do Algoritmo
 No terminal digite o seguinte comando (É necessário que o python esteja instalado em sua máquina!)
-
+```
 $ python3 scp.py arquivo_de_entrada.txt numero_de_iteracoes_realizadas
-
+```
 numero_de_iteracoes_realizadas é o número de vezes que você quer que o algoritmo execute, quanto mais iterações,
 melhor poderá ser a solução encontrada
 
