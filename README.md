@@ -13,8 +13,8 @@ para ambos algoritmos construtivos, ele irá realizar 20 mil iterações para ca
 ou seja, dependendo do tamanho do arquivo de entrada, o algoritmo pode demorar um pouco para ser executado.
 
 Caso queira diminuir o número de iterações, basta alterar o valor que está presente dentro das funções:
-        ```- construtivo_com_melhoramento(dados)``` 
-        ```- construtivo_2_com_melhoramento2(dados)```
+        ```construtivo_com_melhoramento(dados)``` 
+        ```construtivo_2_com_melhoramento2(dados)```
 Onde você mesmo pode alterar o valor presente na linha
 
         #- for _ in range(20000):
