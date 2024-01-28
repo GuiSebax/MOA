@@ -3,10 +3,10 @@ No terminal digite o seguinte comando (É necessário que o python esteja instal
 ```
 $ python3 scp.py arquivo_de_entrada.txt numero_de_iteracoes_realizadas
 ```
-numero_de_iteracoes_realizadas é o número de vezes que você quer que o algoritmo execute, quanto mais iterações,
+```numero_de_iteracoes_realizadas``` é o número de vezes que você quer que o algoritmo execute, quanto mais iterações,
 melhor poderá ser a solução encontrada
 
-Onde o arquivo de entrada deve ser do tipo .txt e deve estar no mesmo diretório do arquivo scp.py
+Onde o arquivo de entrada deve ser do tipo .dat e deve estar no mesmo diretório do arquivo scp.py
 
 OBS: Ao executar esse algoritmo, ele irá trazer a melhor solução encontrada(aplicando o melhoramento)
 para ambos algoritmos construtivos, ele irá realizar 20 mil iterações para cada algoritmo construtivo,
