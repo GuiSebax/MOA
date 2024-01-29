@@ -9,18 +9,8 @@ melhor poderá ser a solução encontrada
 Onde o arquivo de entrada deve ser do tipo .dat e deve estar no mesmo diretório do arquivo scp.py
 
 OBS: Ao executar esse algoritmo, ele irá trazer a melhor solução encontrada(aplicando o melhoramento)
-para ambos algoritmos construtivos, ele irá realizar 20 mil iterações para cada algoritmo construtivo,
+para ambos algoritmos construtivos, ele irá realizar as iterações que o usuário forneceu na entrada para cada algoritmo construtivo,
 ou seja, dependendo do tamanho do arquivo de entrada, o algoritmo pode demorar um pouco para ser executado.
-
-Caso queira diminuir o número de iterações, basta alterar o valor que está presente dentro das funções:
-        ```construtivo_com_melhoramento(dados)``` 
-        ```construtivo_2_com_melhoramento2(dados)```
-Onde você mesmo pode alterar o valor presente na linha
-
-        #- for _ in range(20000):
-Para um valor menor, por exemplo:
-
-        #- for _ in range(10000):
 
 Caso queira também, você pode testar o algoritmo funcionando apenas com o algoritmo construtivo, sem ter melhoramento de solução,
 para isso, basta comentar as linhas que chamam o melhoramento: Comentário é feito com o símbolo '#' (linhas 302 a 307)
