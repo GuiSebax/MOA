@@ -6,7 +6,7 @@
 from copy import deepcopy
 import math, random
 from math import inf
-import sys
+import sys, time
 
 # Classe que representa uma coluna de dados contendo (numero da coluna, custo, linhas que a coluna cobre)
 class Coluna:
@@ -115,8 +115,7 @@ def construtivo(dados):
 
     for i in solucao:
         if set.union(*[Pj[j] for j in solucao if j != i]) == set(
-            range(1, dados.nlinhas + 1)
-        ):
+            range(1, dados.nlinhas + 1)):
             solucao.remove(i)
 
     # Remove colunas redundantes da solução para melhorar o custo
@@ -253,6 +252,9 @@ def melhoramento(solucao, dados):
 # a solução é atualizada
 # Ao final, é retornada a melhor solução encontrada
 def construtivo_com_melhoramento(dados, iteracoes):
+
+    inicio = time.time()
+
     solucao1, custo = construtivo(dados)
     solucao = (solucao1, custo)
 
@@ -261,16 +263,23 @@ def construtivo_com_melhoramento(dados, iteracoes):
         if solucao[1] < custo:
             custo = solucao[1]
             solucao1 = deepcopy(solucao[0])
-            print(f"Solucoes encontrada: {custo}")
+            print(f"Solucoes encontrada: {solucao1}, {custo}")
 
     solucao_ajustada_final = [c + 1 for c in solucao1]
-    return print(f"A melhor solucao encontrada foi: {solucao_ajustada_final}, com custo {custo}")
+    fim = time.time()
+
+    print(f"A melhor solucao encontrada foi: {solucao_ajustada_final}, com custo {custo}")
+    print(f"Tempo de execucao para o Best Improvement: {fim - inicio} segundos")
+
 
 # Função que executa o segundo algoritmo construtivo guloso com o algoritmo de melhoramento
 # O algoritmo é executado 20000 vezes e a cada iteração, se a solução encontrada for melhor que a anterior,
 # a solução é atualizada
 # Ao final, é retornada a melhor solução encontrada
 def construtivo_2_com_melhoramento(dados, iteracoes):
+
+    inicio = time.time()
+
     solucao1, custo = construtivo2(dados)
     solucao = (solucao1, custo)
 
@@ -279,10 +288,13 @@ def construtivo_2_com_melhoramento(dados, iteracoes):
         if solucao[1] < custo:
             custo = solucao[1]
             solucao1 = deepcopy(solucao[0])
-            print(f"Solucoes encontrada: {custo}")
+            print(f"Solucoes encontrada: {solucao1}, {custo}")
 
     solucao_ajustada_final = [c + 1 for c in solucao1]
-    return print(f"A melhor solucao encontrada foi: {solucao_ajustada_final}, com custo {custo}")
+    fim = time.time()
+
+    print(f"A melhor solucao encontrada foi: {solucao_ajustada_final}, com custo {custo}")
+    print(f"Tempo de execucao para o first Improvement : {fim - inicio} segundos")
 
 
 # Função que verifica se a solução encontrada é válida, ou seja,
@@ -307,18 +319,16 @@ def main():
     construtivo_2_com_melhoramento(ler_arquivo(nome_do_arquivo), num_iteracoes)
 
     # print("construtivo 1\n")
-    # for _ in range(num_iteracoes):
+    # for _ in range(20):
     #     solucao, custo = construtivo(ler_arquivo(nome_do_arquivo))
     #     solucao_ajustada = [c + 1 for c in solucao]
     #     print(f"Solucao encontrada: {solucao_ajustada}, com custo {custo}\n")
 
     # print("construtivo 2\n")
-    # for _ in range(num_iteracoes):
+    # for _ in range(20):
     #     solucao, custo = construtivo2(ler_arquivo(nome_do_arquivo))
     #     solucao_ajustada = [c + 1 for c in solucao]
     #     print(f"Solucao encontrada: {solucao_ajustada}, com custo {custo}\n")
-
-
-
+    
 if __name__ == "__main__":
     main()
