@@ -9,16 +9,30 @@ melhor poderá ser a solução encontrada
 Onde o arquivo de entrada deve ser do tipo .dat e deve estar no mesmo diretório do arquivo scp.py
 
 OBS: Ao executar esse algoritmo, ele irá trazer a melhor solução encontrada(aplicando o melhoramento)
-para ambos algoritmos construtivos, ele irá realizar as iterações que o usuário forneceu na entrada para cada algoritmo construtivo,
+para ambos algoritmos construtivos, ele irá realizar 20 mil iterações para cada algoritmo construtivo,
 ou seja, dependendo do tamanho do arquivo de entrada, o algoritmo pode demorar um pouco para ser executado.
 
-Caso queira também, você pode testar o algoritmo funcionando apenas com o algoritmo construtivo, sem ter melhoramento de solução,
-para isso, basta comentar as linhas que chamam o melhoramento: Comentário é feito com o símbolo '#' (linhas 302 a 307)
+Caso queira diminuir o número de iterações, basta alterar o valor que está presente dentro das funções:
+        ```construtivo_com_melhoramento(dados)``` 
+        ```construtivo_2_com_melhoramento2(dados)```
+Onde você mesmo pode alterar o valor presente na linha
 
-           # nome_do_arquivo = sys.argv[1]
+        #- for _ in range(20000):
+Para um valor menor, por exemplo:
+
+        #- for _ in range(10000):
+
+Caso queira também, você pode testar o algoritmo funcionando apenas com o algoritmo construtivo, sem ter melhoramento de solução,
+para isso, basta comentar as linhas que chamam o melhoramento: Comentário é feito com o símbolo '#' (linhas 315 a 319)
+
+           # num_iteracoes = int(sys.argv[2])
            # print("Set Covering Problem - Heuristica Construtiva 1\n")
            # construtivo_com_melhoramento(ler_arquivo(nome_do_arquivo))
            # print("\nSet Covering Problem - Heuristica Construtiva 2\n")
            # construtivo_2_com_melhoramento(ler_arquivo(nome_do_arquivo))
 
-E descomentar as linhas (remover o '#') que aparecem da linha 309 a  319, e executar o algoritmo normalmente
+E descomentar as linhas (remover o '#') que aparecem da linha 321 a  331, e executar esse comando
+```
+$ python3 scp.py arquido_de_entrada.txt
+```
+Que o algoritmo vai trazer 20 resultados encontrados (melhores) para o construtivo 1 e 2 sem a aplicação do melhoramento
